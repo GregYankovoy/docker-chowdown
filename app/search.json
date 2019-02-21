@@ -1,0 +1,15 @@
+---
+---
+[
+  {% for post in site.recipes %}
+    {
+    
+	    "title"    : "{{ post.title | escape }}",
+		{% if post.ingredients %}"ingredients"    : "{% for ingredient in post.ingredients %}{{ ingredient | escape }}, {% endfor %}",{% endif %}
+		"image"	   : "{{ post.image }}",
+	    "url"      : "{{ site.baseurl }}{{ post.url }}"
+      
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+
