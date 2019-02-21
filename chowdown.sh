@@ -32,4 +32,4 @@ mv /opt/tmp/* /opt/app/ > /dev/null 2>&1
 chmod -R 777 /config
 
 cd /config
-jekyll serve
+jekyll serve --host=0.0.0.0
